@@ -1,3 +1,25 @@
-{ 
-    "extends": ["stylelint-config-recommended-scss"], "rules": {}
+{
+    "extends": ["stylelint-config-recommended-scss"],
+    "plugins": [
+        "stylelint-selector-bem-pattern",
+        "stylelint-order",
+        "stylelint-declaration-block-no-ignored-properties"
+    ],
+    "rules": {
+        "plugin/selector-bem-pattern": {
+            "preset": "bem",
+            "componentName": "[A-Z]+",
+            "componentSelectors": {
+                "initial": "^\\.{componentName}(?:__[-a-z]+)?(?:--[-a-z]+)?$"
+            },
+            "utilitySelectors": "^\\.u-[a-z]+$"
+        },
+        "declaration-no-important": true,
+        "block-no-empty": true,
+        "color-named": "never",
+        "selector-max-id": 0,
+        "max-nesting-depth": 3,
+        "declaration-block-no-duplicate-properties": true,
+        "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }]
+    }
 }
