@@ -1,12 +1,31 @@
-@use "sass:color";
+$primary-color: #2a9d8f;
+$secondary-color: #264653;
+$text-color: #333;
+$background-color: #f4f4f9;
+
+$catedral-bg-color: lighten($primary-color, 50%);
+$lonja-bg-color: lighten($secondary-color, 40%);
+$banys-bg-color: lighten($primary-color, 50%);
+$castell-bg-color: lighten($secondary-color, 40%);
+$rutas-bg-color: lighten($primary-color, 50%);
 
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+$font-size-base: 16px;
+$font-size-title: 2rem;
+$font-size-description: 1.1rem;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$button-color: #ff7f50;
+$button-hover-color: #e76f3b;
+$link-color: $text-color;
+$link-hover-color: #04508C;
+$link-underline-color: $link-hover-color;
 
-$mqMinWidth: 420px;
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
